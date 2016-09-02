@@ -1,10 +1,10 @@
 <main class="album-view container narrow">
     <section class="clearfix">
         <div class="column half">
-            {{  album.albumArtUrl  }}
+            <img src="{{  album.albumData.albumArtUrl  }}">
         </div>
         <div class="album-view-details column half">
-            <h2 class="album-view-title">{{  album.title  }}</h2>
+            <h2 class="album-view-title">{{  album.albumData.title  }}</h2>
             <h3 class="album-view-artist">{{  album.artist  }}</h3>
             <h5 class="album-view-release-info">{{  album.year  }} {{  album.label  }}</h5>
         </div>
