@@ -39,8 +39,8 @@
     Fixtures.getCollection = function(numberOfAlbums) {
     //array with specified number of albumPicasso objects pushed to it//
       var arrayOfPicasso = [];
-      for (var i = 0; i < numberOfAlbums.length; i++) {
-        arrayOfPicasso += numberOfAlbums[i];
+      for (var i = 0; i < numberOfAlbums; i++) {
+        arrayOfPicasso[i] = Fixtures.getAlbum;
       };
       return arrayOfPicasso
     };
