@@ -14,11 +14,16 @@
          * @param {Object} song
          */
 
-         var setSong = function(song) {
+        var setSong = function(song) {
            if (currentBuzzObject) {
              currentBuzzObject.stop();
              currentSong.playing = null;
            }
+
+        var playSong = function() {
+          currentBuzzObject.play();
+          song.playing = true;
+        }
 
            currentBuzzObject = new buzz.sound(song.audioUrl, {
              formats: ['mp3'],
