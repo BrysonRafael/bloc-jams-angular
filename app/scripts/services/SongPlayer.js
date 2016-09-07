@@ -1,7 +1,16 @@
 (function() {
     function SongPlayer() {
+          /**
+          * @desc Allows users to play and pause songs
+          * @type function
+          */
          var SongPlayer = {};
+         /**
+         * @desc Play or pause songs
+         * @type Object
+         */
          var currentSong = null;
+
          /**
          * @desc Buzz object audio file
          * @type {Object}
@@ -20,6 +29,12 @@
              currentSong.playing = null;
            }
 
+           /**
+           * @desc Sets a song to the currently playing song
+           * @type function
+           */
+
+
         var playSong = function() {
           currentBuzzObject.play();
           song.playing = true;
@@ -33,6 +48,11 @@
            currentSong = song;
          };
 
+         /**
+         * @desc Plays the currenly set song
+         * @type function
+         */
+
          SongPlayer.play = function(song) {
            if (currentSong !== song) {
              setSong(song);
@@ -45,9 +65,18 @@
              }
           };
 
+          /**
+          * @desc Allows users to play a song via the song player
+          * @type function
+          */
+
           SongPlayer.pause = function(song) {
             currentBuzzObject.pause();
             song.playing = false;
+            /**
+            * @desc Allows users to pause a song via the song player
+            * @type function
+            */
             }
         }
       }
