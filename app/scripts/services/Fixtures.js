@@ -38,7 +38,7 @@
 
     Fixtures.getCollection = function(length) {
       var albums = [];
-      for (var i = 0; i < 12; i++) {
+      for (var i = 0; i < length; i++) {
         albums.push(Fixtures.getAlbum());
       }
 
