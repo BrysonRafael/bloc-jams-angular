@@ -26,8 +26,7 @@
 
         var setSong = function(song) {
            if (currentBuzzObject) {
-             currentBuzzObject.stop();
-             SongPlayer.currentSong.playing = null;
+             stopSong();
            }
 
         /**
@@ -95,8 +94,7 @@
             */
 
             if (currentSongIndex < 0) {
-              currentBuzzObject.stop();
-              SongPlayer.currentSong.playing = null;
+              stopSong();
               /**
               * @desc If the user is on the first song and clicks previous button, stops current song and sets currently playing song to first song.
               * @type function
@@ -110,6 +108,36 @@
               * @type function
               */
             }
+          };
+
+          SongPlayer.next = function() {
+            var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+            currentSongIndex++;
+            /**
+            * @desc Allows users to play the next song via SongPlayer
+            * @type function
+            */
+
+            if (currentSongIndex == songs.length) {
+              stopSong();
+              /**
+              * @desc If the user is on the last song and clicks next button, stops current song and sets currently playing song to last song.
+              * @type function
+              */
+            } else {
+              var song = currentAlbum.songs[currentSongIndex];
+              setSong(song);
+              playSong(song);
+              /**
+              * @desc If not on the first song, moves to previous song and plays it.
+              * @type function
+              */
+            }
+          };
+
+          var stopSong = function() {
+            currentBuzzObject.stop();
+            SongPlayer.currentSong.playing = null;
           };
         }
       }
