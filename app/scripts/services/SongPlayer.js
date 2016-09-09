@@ -28,6 +28,14 @@
            if (currentBuzzObject) {
              stopSong();
            }
+            
+            
+          currentBuzzObject = new buzz.sound(song.audioUrl, {
+             formats: ['mp3'],
+             preload: true
+           });
+
+         };
 
         /**
         * @desc Finds the index of a song in the songs array
@@ -42,15 +50,9 @@
         var playSong = function() {
           currentBuzzObject.play();
           song.playing = true;
-        }
+        };
 
-           currentBuzzObject = new buzz.sound(song.audioUrl, {
-             formats: ['mp3'],
-             preload: true
-           });
 
-            = song;
-         };
 
          /**
          * @desc Plays the currenly set song
@@ -138,12 +140,12 @@
           var stopSong = function() {
             currentBuzzObject.stop();
             SongPlayer.currentSong.playing = null;
+    
           };
-        }
-      }
 
+    
     return SongPlayer;
-  }
+  };
 
     angular
         .module('blocJams')
