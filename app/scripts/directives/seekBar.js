@@ -47,6 +47,7 @@
           return {left: percentString()};
         };
 
+        scope.
 
         scope.onClickSeekBar = function(event) {
           var percent = calculatePercent(seekBar, event);
