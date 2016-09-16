@@ -24,8 +24,8 @@
              <h3 class="artist-name">{{ currentAlbum.artist }}</h3>
              <div class="seek-control">
                  <seek-bar value="{{ playerBar.songPlayer.currentTime }}" max="{{ playerBar.songPlayer.currentSong.duration }}" on-change="playerBar.songPlayer.setCurrentTime(value)"></seek-bar>
-                 <div class="current-time">{{ currentBuzzObject.setTime(time) }}</div>
-                 <div class="total-time">{{ currentSongFromAlbum.length }}</div>
+                 <div class="current-time">{{ playerBar.songPlayer.currentTime }}</div>
+                 <div class="total-time">{{ (playerBar.songPlayer.currentSong.duration/60).toFixed(0) }} : {{ playerBar.songPlayer.currentSong.duration % 60 }} </div>
              </div>
          </div>
          <div class="control-group volume">
