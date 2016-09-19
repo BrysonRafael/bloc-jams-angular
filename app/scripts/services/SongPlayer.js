@@ -76,8 +76,8 @@
         * @desc Set current volume of currently playing song
         * @param {Number}*/
 
-        SongPlayer.setVolume = function(newValue) {
-          currentBuzzObject.setVolume(newValue);
+        SongPlayer.setVolume = function(value) {
+          currentBuzzObject.setVolume(value);
         };
 
         var playSong = function() {
