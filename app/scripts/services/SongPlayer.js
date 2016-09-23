@@ -78,6 +78,7 @@
 
         SongPlayer.setVolume = function(value) {
           currentBuzzObject.setVolume(value);
+          SongPlayer.volume = value;
         };
 
         var playSong = function() {
