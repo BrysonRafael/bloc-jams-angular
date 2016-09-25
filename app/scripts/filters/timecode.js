@@ -1,29 +1,30 @@
 (function() {
-  function timecode() {
-    return function(seconds) {
-      var seconds = Number.parseFloat(seconds);
+    function timecode() {
+		     return function(seconds) {
 
-      if (Number.isNaN(seconds)) {
-        return '-:--';
-      }
+             var seconds = Number.parseFloat(seconds);
 
-      var wholeSeconds = Math.floor(seconds);
-      var minutes = Math.floor(wholeSeconds / 60);
-      var remainingSeconds = wholeSeconds % 60;
+             if (Number.isNaN(seconds)) {
+                 return '-:--';
+             }
 
-      var output = minutes + ':';
+             var wholeSeconds = Math.floor(seconds);
+             var minutes = Math.floor(wholeSeconds / 60);
+             var remainingSeconds = wholeSeconds % 60;
 
-      if (remainingSeconds < 10) {
-        output += '0';
-      }
+             var output = minutes + ':';
 
-      output += remainingSeconds;
+             if (remainingSeconds < 10) {
+                 output += '0';
+             }
 
-      return output;
+             output += remainingSeconds;
+
+	           return output;
+        };
     };
-  }
 
-  angular
-    .module('blocJams')
-    .filter('timecode', timecode);
+    angular
+        .module('blocJams')
+        .filter('timecode', timecode);
 })();
